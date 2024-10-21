@@ -15,4 +15,12 @@ function factors(n) {
     return factors;
 }
 
-factors(4)
+function newFactorial(n){
+    if (n>0) {
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+}
