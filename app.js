@@ -1,5 +1,6 @@
 function factors(n) {
     let factors = []
+    //GUARD CLAUSE
     if (n <= 0) {
         return "negative number or 0";
     }
