@@ -14,7 +14,7 @@ function binaryTodecimal(N) {
     console.log(decimal);
 }
 
-/* binaryTodecimal(1101); */
+binaryTodecimal(1101);
 
 function decimalToBinary(N) {
     let number = 1;
@@ -40,7 +40,7 @@ function decimalToBinary(N) {
         b = b / 2;
         console.log("remainder: " + N);
     }
-    console.log(array.join(''));
+    console.log(Number(array.join('')));
 }
 
-/* decimalToBinary(13); */
+decimalToBinary(13);
