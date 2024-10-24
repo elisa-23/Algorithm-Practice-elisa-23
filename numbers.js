@@ -1,55 +1,46 @@
+console.log("Connected");
+
 function binaryTodecimal(N) {
-    let length = N.length;
-    for (let i=length--;i<0;i--){
-        
+    const length = N.toString().length;     /* length only works with strings */
+    console.log(length);
+    let powers = length - 1;
+    let decimal = 0;
+    const numbers = N.toString().split("").map(Number);
+    for (let i = 0; i < length; i++) {
+        let number = numbers[i] * (2 ** (powers - i));
+        console.log(number);
+        decimal = decimal + (number);
     }
+    console.log(decimal);
 }
+
+/* binaryTodecimal(1101); */
 
 function decimalToBinary(N) {
-    let length = N.length;
-    let result = [];
-    let remainder = 0;
-    let number = 0;
+    let number = 1;
     let power = 0;
-    let a = 0;
-    for (let i = length--; i<0; i--){
-        if (i === length--){
-            if (N%2 === 1){
-                result.push('1');
-                console.log(1);
-                remainder = N[i]--;
-            }else{
-                result.push('0');
-                console.log(0);
-                remainder = N[i];
-            }
-            console.log(remainder);
-        }else{
-            power = length - i + 1;
-            number = (N[i]*(power)) + remainder;
-            console.log(number);
-            remainder = 0;
-            a = 2 ** power;
-            console.log(a);
-            if (a <= number){
-                result.push('1');
-                console.log(1);
-                remainder = number-a;
-            }else {
-                result.push('0');
-                console.log(0);
-                remainder = number;
-            }
-            console.log(remainder);
+    console.log("power: " + power);
+    while (number < N) {
+        power++;
+        console.log("power: " + power);
+        number = number * 2;
+        console.log("number: " + number);
+    }
+    power--;
+    number = number / 2;
+    let array = [];
+    let b = 2 ** power;
+    for (let i = 0; i <= power; i++) {
+        if (N >= b) {
+            N = N - b;
+            array.push("1");
+        } else {
+            array.push("0");
         }
+        b = b / 2;
+        console.log("remainder: " + N);
     }
-    let resultLength = result.length;
-    console.log(result);
-    let binary = '';
-    for (let i=resultLength--; i<0; i--){
-        binary = binary + result[i];
-    }
-    console.log(binary);
+    console.log(array.join(''));
 }
 
-decimalToBinary(1);
+/* decimalToBinary(13); */
