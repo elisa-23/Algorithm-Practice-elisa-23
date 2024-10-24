@@ -4,7 +4,7 @@ function factors(n) {
     if (n <= 0) {
         return "negative number or 0";
     }
-    for (i = 1; i <= n; i++) {
+    for (let i = 1; i <= n; i++) {
         if (n % i === 0) {
             factors.push(i);
         } else {
