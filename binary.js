@@ -20,13 +20,14 @@ function decimalToBinary(N) {
     let number = 1;
     let power = 0;
     console.log("power: " + power);
-    while (number < N) {
+    while (number <= N) {
         power++;
         console.log("power: " + power);
         number = number * 2;
         console.log("number: " + number);
     }
     power--;
+    console.log("power: " + power);
     number = number / 2;
     let array = [];
     let b = 2 ** power;
